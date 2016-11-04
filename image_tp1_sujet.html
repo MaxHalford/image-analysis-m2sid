@@ -1,0 +1,159 @@
+
+<!-- saved from url=(0081)http://moodle.univ-tlse3.fr/pluginfile.php/146208/mod_resource/content/11/BE1.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BE 1 : Indexation par la couleur</title>
+</head>
+
+
+<body>
+
+<h1>Indexation d'images par la couleur</h1>
+
+
+
+
+<h2>1. Lecture d'une image RGB</h2>
+
+<table border="0" cellpadding="0" width="100%">
+  <tbody>
+     <tr>
+        <td valign="top"> <img width="200" height="200" id="_x0000_i1076" src="./image_tp1_sujet_files/45.jpg"></td>
+        <td valign="center"> Sauvegarder l'image ci-contre sur votre compte (clic droit sur l'image).<br><br>
+            Lire et afficher cette image sous <b>Matlab</b> à l'aide de la commande <em>imread</em> :<br>
+            <em>img = imread('Images/45.jpg');<br>
+            image(img);</em><br><br>
+            Exécuter la commande <em>size(img)</em> et commenter les résultats.<br>
+            La matrice <em>img</em> est une matrice 3D contenant des valeurs comprises entre 0 et 255 codées sur 1 octet.<br>
+
+
+        </td>
+     </tr>
+
+<!--Calculer l'erreur quadratique moyenne entre l'image de départ et l'image quantifiée.<BR>-->
+  </tbody>
+</table>
+<br>
+
+
+
+<h2>2. Quantification de la couleur</h2>
+
+Nous allons tout d'abord quantifier l'image : celle-ci est effectuée par sous-échantillonnage sur les 2 bits de poids forts pour chaque composante.<br><br>
+
+Ecrire une fonction <em><b>quantification</b></em> qui effectue cette opération.<br><br>
+
+Nous utiliserons la fonction <em>bitand</em> afin d'accéder à la valeur d'un bit.<br>
+Exemple pour récupérer la valeur du 1er bit de poids fort (bit7 --&gt; 2^7 = 128) du nombre <i>n</i> : <em>bitand(n,128)/128</em> renverra <i>0</i> ou <i>1</i>.<br><br>
+
+Afficher le résultat sous la forme d'une image. Que remarquez-vous ?<br><br>
+
+
+
+<h2>3. Histogramme de couleur</h2>
+
+Nous allons maintenant indexer cette image par son histogramme de couleur.<br><br>
+
+Ecrire une fonction <em><b>histogramme</b></em> qui calcule l'histogramme correspondant.<br>
+Afficher le résultat.<br><br>
+
+
+
+<h2>4. Indexation d'image</h2>
+
+Sauvegarder l'ensemble des images ci-dessous. Elles sont également disponibles sous Moodle dans l'archive : <i>bibimage.tar</i><br><br>
+
+Ecrire une fonction <em><b>indexation</b></em> qui applique le processus sur chaque image et mémorise l'histogramme obtenu à chaque fois.<br><br>
+
+<table border="0" cellpadding="0" width="100%">
+  <tbody>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1075" src="./image_tp1_sujet_files/01.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1074" src="./image_tp1_sujet_files/02.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1073" src="./image_tp1_sujet_files/03.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1072" src="./image_tp1_sujet_files/04.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1071" src="./image_tp1_sujet_files/05.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1070" src="./image_tp1_sujet_files/06.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1069" src="./image_tp1_sujet_files/07.jpg"></td>
+     </tr>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1068" src="./image_tp1_sujet_files/08.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1067" src="./image_tp1_sujet_files/09.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1066" src="./image_tp1_sujet_files/10.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1065" src="./image_tp1_sujet_files/11.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1064" src="./image_tp1_sujet_files/12.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1063" src="./image_tp1_sujet_files/13.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1062" src="./image_tp1_sujet_files/14.jpg"></td>
+     </tr>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1061" src="./image_tp1_sujet_files/15.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1060" src="./image_tp1_sujet_files/16.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1059" src="./image_tp1_sujet_files/17.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1058" src="./image_tp1_sujet_files/18.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1057" src="./image_tp1_sujet_files/19.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1056" src="./image_tp1_sujet_files/20.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1055" src="./image_tp1_sujet_files/21.jpg"></td>
+     </tr>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1054" src="./image_tp1_sujet_files/22.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1053" src="./image_tp1_sujet_files/23.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1052" src="./image_tp1_sujet_files/24.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1051" src="./image_tp1_sujet_files/25.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1050" src="./image_tp1_sujet_files/26.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1049" src="./image_tp1_sujet_files/27.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1048" src="./image_tp1_sujet_files/28.jpg"></td>
+     </tr>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1047" src="./image_tp1_sujet_files/29.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1046" src="./image_tp1_sujet_files/30.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1045" src="./image_tp1_sujet_files/31.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1044" src="./image_tp1_sujet_files/32.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1043" src="./image_tp1_sujet_files/33.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1042" src="./image_tp1_sujet_files/34.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1041" src="./image_tp1_sujet_files/35.jpg"></td>
+     </tr>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1040" src="./image_tp1_sujet_files/36.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1039" src="./image_tp1_sujet_files/37.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1038" src="./image_tp1_sujet_files/38.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1037" src="./image_tp1_sujet_files/39.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1036" src="./image_tp1_sujet_files/40.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1035" src="./image_tp1_sujet_files/41.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1034" src="./image_tp1_sujet_files/42.jpg"></td>
+     </tr>
+     <tr>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1033" src="./image_tp1_sujet_files/43.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1032" src="./image_tp1_sujet_files/44.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1031" src="./image_tp1_sujet_files/46.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1030" src="./image_tp1_sujet_files/47.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1029" src="./image_tp1_sujet_files/48.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1028" src="./image_tp1_sujet_files/49.jpg"></td>
+         <td valign="top"><img border="0" width="100" height="100" id="_x0000_i1027" src="./image_tp1_sujet_files/50.jpg"></td>
+     </tr>
+  </tbody>
+</table>
+<br>
+
+
+
+<h2>5. Recherche d'images similaires par la couleur</h2>
+
+Ecrire un programme <em><b>tp1.m</b></em> qui lance l'indexation.<br>
+Ensuite, demander à l'utilisateur d'entrer le numéro d'une image et renvoyer les 5 images les plus similaires.<br>
+La similarité sera calculé en fonction d'une distance du type <b>intersection d'histogrammes</b> sur les histogrammes en couleur issus de l'indexation.<br><br>
+
+
+<h2>6. Variante</h2>
+
+Modifier votre programme (et vos fonctions !) pour que l'histogramme en couleur soit désormais calculé par quantification avec un sous-échantillonnage sur <b>3 bits par composante</b>.<br>
+Les résultats sont-ils meilleurs ?<br><br>
+
+
+<hr size="2" width="100%" align="center"><br>
+<b>Références iconographiques : </b><a href="http://www.freefoto.com/">http://www.freefoto.com/</a><br><br>
+<hr size="2" width="100%" align="center"><br>
+
+Merci à Philippe Joly pour le sujet...
+
+
+
+</body></html>

@@ -1,0 +1,93 @@
+
+<!-- saved from url=(0080)http://moodle.univ-tlse3.fr/pluginfile.php/146257/mod_resource/content/2/BE2.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>BE2 : Indexation par la texture</title>
+</head>
+
+
+<body>
+
+<h1>Indexation d'images par la texture</h1>
+
+
+
+<h2>1. Observations et expérimentations dans l'espace de Fourier</h2>
+
+<table border="0" cellpadding="0" width="100%">
+  <tbody>
+     <tr>
+         <td><img width="200" height="200" id="_x0000_i1031" src="./image_tp2_sujet_files/BE05I01.jpg"></td>
+         <td valign="center">Charger l'image ci-contre sous <b>Matlab</b>.<br>
+             En calculer la transformée de Fourier en 2 dimensions.<br><br>
+             Pour cela, utiliser le code suivant : <br>
+             <em>imagesc(log(abs(fft2(img))));</em><br><br>
+             avec :<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>abs(fft2(img))</em> : calcule le spectre (module des coefficients complexes issus de la transformée de Fourier en 2 dimensions),<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>log</em> : permet de ramener les amplitudes des fréquences sur une échelle plus compacte,<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>imagesc</em> : étale les intensités résultantes sur l'ensemble des intensités possibles (i.e. ramène les valeurs entre 0 et 255).</td>
+     </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<table border="0" cellpadding="0" width="100%">
+  <tbody>
+      <tr>
+          <td><img width="213" height="167" id="_x0000_i1030" src="./image_tp2_sujet_files/BE05I02.gif"></td>
+          <td valign="center">Vous devriez obtenir une image ayant l'apparence de celle donnée ci-contre.<br><br>
+              Il s'agit de l'image du spectre en amplitude.<br><br>
+              Observer l'organisation des intensités maximales.<br><br>
+              Quelle relation observez-vous entre l'organisation des fréquences d'amplitude maximale et l'orientation du texte ?</td>
+      </tr>
+  </tbody>
+</table>
+<br>
+
+
+<h2>2. Construction d'un descripteur pour différentes classes de texture</h2>
+
+Nous reprenons les images du premier TP : <i>bibimage.tar</i>.<br><br>
+
+Ecrire une fonction <em><b>descripteur</b></em> qui applique le processus suivant...<br>
+Nous travaillerons sur ces images converties en niveaux de gris (en calculant la moyenne de l'intensité en RGB).<br>
+Sur chaque image en niveaux de gris, nous calculons la Transformée de Fourier 2D et nous produisons l'image du spectre en amplitude.<br>
+Nous découpons la moitié supérieure en 6x3 blocs, puis nous calculons le logarithme de l'énergie moyenne sur chacun d'eux (i.e. la moyenne des coefficients au carré).<br>
+Nous mémorisons enfin les 18 résultats pour chaque image.<br><br>
+
+
+<table border="0" cellpadding="0" width="100%">
+  <tbody>
+      <tr>
+          <td valign="top" align="center"><img border="0" width="200" height="200" id="_x0000_i1029" src="./image_tp2_sujet_files/50.jpg"></td>
+          <td valign="top" align="center"><img border="0" width="200" height="200" id="_x0000_i1028" src="./image_tp2_sujet_files/BE02I01.jpg"></td>
+          <td valign="top" align="center"><img border="0" width="200" height="200" id="_x0000_i1027" src="./image_tp2_sujet_files/BE02I02.jpg"></td>
+          <td valign="top" align="center"><img border="0" width="200" height="100" id="_x0000_i1026" src="./image_tp2_sujet_files/BE02I03.jpg"></td>
+      </tr>
+      <tr>
+          <td valign="top" align="center">Image de départ<br>(matrice 200x200x3)</td>
+          <td valign="top" align="center">Image en niveaux de gris<br>(matrice 200x200)</td>
+          <td valign="top" align="center">Spectre en amplitude<br>(matrice 200x200)</td>
+          <td valign="top" align="center">Découpage en 18 blocs de la moitié supérieure gauche<br>(matrice 200x100)</td>
+      </tr>
+  </tbody>
+</table>
+<br>
+
+
+
+<h2>3. Calcul d'une distance et requête par l'exemple</h2>
+
+Ecrire un programme <em><b>tp2.m</b></em> qui lance l'indexation (création des descripteurs de chaque image).<br>
+Ensuite, en appliquant une <b>distance de Manhattan</b> sur les 18 coefficients associés à chaque image, renvoyer les 10 images les plus proches (au sens de cette distance) d'une image requête identifiée par l'utilisateur.<br><br>
+
+
+<hr size="2" width="100%" align="center"><br>
+<b>Références iconographiques : </b><a href="http://www.freefoto.com/">http://www.freefoto.com/</a><br><br>
+<hr size="2" width="100%" align="center"><br>
+
+Merci à Philippe Joly pour le sujet...
+
+
+
+</body></html>
