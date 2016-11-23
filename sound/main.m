@@ -1,10 +1,7 @@
-%% Constants
-nb_gauss = 4; % nombre de lois gaussiennes,
-nbe_coef = 32; % nombre de parametres (coefficients cepstraux),
-taille_fenetre = 512; % la taille de la fenetre d'analyse,
 % Nombre de fichiers d'apprentissage et de tests.
 nbe_loc = 10;
 nbe_fic = 8;
+nbe_coef = 32; % number of cepstral coefficient,
 
 %% Preprocessing
 % Labelize data
@@ -15,7 +12,10 @@ parametrisation_total(taille_fenetre, nbe_loc, nbe_fic, nbe_coef);
 
 %% Learning
 
-locutor = 4;
+% Constants
+nb_gauss = 6; % number of gaussian,
+taille_fenetre = 512; % frame width,
+locutor = 6; % locuteur id
 
 % Affectation step
 affectation('LABELS', 'MFCC', nbe_loc, nbe_fic, locutor);
@@ -25,4 +25,5 @@ affectation('LABELS', 'MFCC', nbe_loc, nbe_fic, locutor);
 
 % Test total
 taux_reco = tests_total(taille_fenetre, nbe_coef, m, v, w, m_l, v_l, w_l);
+disp(sprintf('Locutor tested: L%d', locutor))
 print_truth_predict(taux_reco);
