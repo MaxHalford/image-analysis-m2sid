@@ -1,3 +1,3 @@
-# Image analysis lab reports - M2 SID 2016/2017
+# Signal analysis lab reports - M2 SID 2016/2017
 
-Personal repo, nothing to see here!
+Personal repo of [Axel](https://github.com/axelbellec) and I, nothing to see here!
