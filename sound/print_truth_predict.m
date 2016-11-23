@@ -12,7 +12,7 @@ function print_truth_predict(taux_reco)
     end
     
     for i=1:length(taux_reco)
-        if taux_reco(i) > 0.5
+        if taux_reco(i) < 0.5
             disp(sprintf('[%s] Truth: %s - Predict: %s (score: %d)', files{i}, locutor_truth{i}, 'locutor', taux_reco(i)));
         else
             disp(sprintf('[%s] Truth: %s - Predict: %s (score: %d)', files{i}, locutor_truth{i}, 'monde', taux_reco(i)));
