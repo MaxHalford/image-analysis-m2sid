@@ -3,6 +3,7 @@ nbe_loc = 10;
 nbe_fic = 8;
 nbe_coef = 32; % number of cepstral coefficient,
 threshold = 0.0001;
+taille_fenetre = 512; % frame width,
 
 %% Preprocessing
 % Labelize data
@@ -15,7 +16,6 @@ parametrisation_total(taille_fenetre, nbe_loc, nbe_fic, nbe_coef);
 
 % Constants
 nb_gauss = 4; % number of gaussian,
-taille_fenetre = 512; % frame width,
 locutor = 1; % locuteur id
 
 % Affectation step
