@@ -1,8 +1,6 @@
-function [etiq_parole] = etiquetage(signal, taille_fenetre)
+function [etiq_parole] = etiquetage(signal, taille_fenetre, threshold)
     etiq_parole = [];
     [energies] = energie(signal, taille_fenetre);
-    % TODO: change threshold constant (define some min windows)
-    threshold = 0.0001;
     for i=1:length(energies)
        if energies(i) >= threshold
            etiq_parole = [etiq_parole, 1];

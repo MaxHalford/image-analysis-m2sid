@@ -11,7 +11,7 @@ function [taux_reco] = tests_total(taille_fenetre, nbe_coef, m, v, w, m_l, v_l, 
             prob_monde = gmmlpdf(mfcc, m, v, w);
 			prob_locu = gmmlpdf(mfcc, m_l, v_l, w_l);
             % Create a new vector with 1 if locutor wins, else 0
-			prob_tot = prob_monde > prob_locu;
+			prob_tot = prob_monde < prob_locu;
             % Compute the sum for locutor
 			locu_wins = sum(prob_tot);
             % Compute the final score

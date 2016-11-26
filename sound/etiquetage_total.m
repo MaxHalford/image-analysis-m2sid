@@ -1,4 +1,4 @@
-function etiquetage_total(taille_fenetre, nbe_loc, nbe_fic)
+function etiquetage_total(taille_fenetre, nbe_loc, nbe_fic, threshold)
     basepath = 'APP';
     output_path = 'LABELS';
     % Loop through nbe_loc
@@ -8,11 +8,9 @@ function etiquetage_total(taille_fenetre, nbe_loc, nbe_fic)
             % Generate audio filename
             input_file = sprintf('%s/L%d_fic%d.wav', basepath, i, j);
             [signal, fs] = lecture(input_file);
-            [etiq_parole] = etiquetage(signal, taille_fenetre);
+            [etiq_parole] = etiquetage(signal, taille_fenetre, threshold);
             output_file = sprintf('%s/L%d_fic%d.lab', output_path, i, j);
             save(output_file,'etiq_parole','-ASCII');
         end
     end
 end
-
-

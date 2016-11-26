@@ -2,10 +2,11 @@
 nbe_loc = 10;
 nbe_fic = 8;
 nbe_coef = 32; % number of cepstral coefficient,
+threshold = 0.0001;
 
 %% Preprocessing
 % Labelize data
-etiquetage_total(taille_fenetre, nbe_loc, nbe_fic);
+etiquetage_total(taille_fenetre, nbe_loc, nbe_fic, threshold);
 
 % Compute MFCC
 parametrisation_total(taille_fenetre, nbe_loc, nbe_fic, nbe_coef);
@@ -13,9 +14,9 @@ parametrisation_total(taille_fenetre, nbe_loc, nbe_fic, nbe_coef);
 %% Learning
 
 % Constants
-nb_gauss = 6; % number of gaussian,
+nb_gauss = 4; % number of gaussian,
 taille_fenetre = 512; % frame width,
-locutor = 6; % locuteur id
+locutor = 1; % locuteur id
 
 % Affectation step
 affectation('LABELS', 'MFCC', nbe_loc, nbe_fic, locutor);
