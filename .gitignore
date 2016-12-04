@@ -3,3 +3,5 @@ APP/*
 LABELS/*
 MFCC/*
 RECO/*
+
+.ipynb_checkpoints/*
